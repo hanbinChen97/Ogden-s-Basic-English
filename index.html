@@ -3,24 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ogden's Basic English - 100词学习版</title>
+    <meta name="theme-color" content="#f5efe4" />
+    <title>Ogden's Basic English · 850 词学习手册</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="container">
-      <h1>Ogden's Basic English</h1>
-      <p>
-        第一版演示：100 个核心词学习清单（可勾选已学、自动保存进度、下载剩余词汇）。
-      </p>
+    <header class="hero">
+      <p class="eyebrow">A controlled language designed by C.K. Ogden · 1930</p>
+      <h1>Ogden's <em>Basic</em> English</h1>
+      <p class="subtitle">850 词学习手册 · 分类记忆 · 本地保存进度</p>
+    </header>
 
-      <section class="toolbar">
-        <button id="resetBtn" type="button">重置进度</button>
-        <button id="downloadBtn" type="button">下载剩余词汇</button>
+    <main>
+      <section class="studybar" aria-label="学习控制">
+        <label class="search">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索单词或分类..." autocomplete="off" />
+          <kbd>/</kbd>
+        </label>
+
+        <div id="categoryTabs" class="tabs" aria-label="词汇分类"></div>
+
+        <div class="controls">
+          <div class="segmented" aria-label="显示模式">
+            <button id="listModeBtn" class="is-active" type="button">列表</button>
+            <button id="cardModeBtn" type="button">卡片</button>
+          </div>
+          <button id="reviewBtn" class="ghost" type="button">只看未学</button>
+          <button id="downloadBtn" class="ghost" type="button">下载未学</button>
+          <button id="resetBtn" class="ghost" type="button">重置</button>
+        </div>
       </section>
 
-      <p id="progress" class="progress">已学习 0 / 100</p>
-      <ul id="wordList" class="word-list" aria-label="Word learning list"></ul>
+      <section class="progress-panel" aria-label="学习进度">
+        <div>
+          <span id="progressText">已学习 0 / 850</span>
+          <strong id="percentText">0%</strong>
+        </div>
+        <div class="meter"><span id="progressBar"></span></div>
+        <p id="resumeText">学习记录会自动保存在本机浏览器。</p>
+      </section>
+
+      <section id="sections" class="sections" aria-live="polite"></section>
     </main>
+
+    <footer>
+      Based on Charles Kay Ogden's Basic English 850 word list.
+    </footer>
 
     <script src="script.js"></script>
   </body>
