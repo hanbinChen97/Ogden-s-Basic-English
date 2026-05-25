@@ -1,48 +1,32 @@
-<!-- 图片让人直接看到 产品样子 -->
-![Mainpage](assets/images/image.png)
+# Ogden's Basic English
 
-#   xxxx project
+一个基于 GitHub Pages 的静态网站第一版，用于学习 Ogden Basic English 的核心词汇。
 
-<!-- badge 酷 -->
+## 功能
 
-<p align="center">
-   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-   <a href="https://hub.docker.com/r/YOUR_DOCKER_IMAGE"><img src="https://img.shields.io/badge/Docker-Supported-blue" alt="Docker"></a>
-</p>
+- 展示 100 个基础英文词汇
+- 勾选已学习词汇（使用浏览器 `localStorage` 保存）
+- 一键下载“剩余未学习词汇”（`remaining-words.txt`）
+- 可直接通过 GitHub Actions 自动部署到 GitHub Pages
 
-## 目录 / Table of Contents
-- xxx
-- xxx
+## 本地预览
 
-<!-- 可以加工后，放到简历，linkedin，这里是 og 版本内容 -->
-## 项目概述 / Project Overview
-LeanyAI 是一个基于 Next.js 和 FastAPI 的多语言 AI 平台，支持前后端分离部署，提供可扩展的工作流管理和 i18n 国际化功能。
-- Solely responsible for developing complete SaaS platform: AI-powered email assistant
-- Frontend architecture: React/Next.js with responsive design and cloud deployment on Vercel
-- Backend implementation: RESTful API as microservice solution with LLM integration for text analysis
+直接打开 `index.html` 即可，或使用任意静态服务器。
 
+## 部署说明
 
-## 项目结构 / Directory Structure
-```text
-/
-├── web/                      # 前端 Next.js 应用，详见 web/README.md
-...
-│   └── readme.md             # 前端使用说明
-├── api/                      # 后端服务 (FastAPI, 包含 fastapi 和 minio 相关代码)
-│   ├── main.py               # FastAPI 相关代码
-...
-│   └── Dockerfile.minio      # MinIO 集成与相关代码
-├── docker/
-│   ├── docker-compose.yml    # Docker Compose 配置
-│   └── readme.md             # Docker 使用说明
-└── docs/                     # 文档与设计资源
-```
+仓库已包含 `.github/workflows/deploy-pages.yml`：
 
-## 先决条件 / Prerequisites
-- Node.js >= 18
-- pnpm >= 7
-- Docker & Docker Compose
-- uv
+1. 在仓库 Settings -> Pages 中将 Source 设置为 **GitHub Actions**
+2. push 到 `main`/`master` 后会自动部署
+3. 也可在 Actions 页面手动触发 `Deploy static site to GitHub Pages`
 
+## 常见问题
 
-## 安装与启动 / Getting Started
+### 静态页面可以有 JS 代码吗？
+
+可以。GitHub Pages 支持 HTML/CSS/JavaScript 静态资源。
+
+### 可以做按钮下载数据吗？
+
+可以。当前页面已提供“下载剩余词汇”按钮，基于浏览器 Blob 下载文本文件。

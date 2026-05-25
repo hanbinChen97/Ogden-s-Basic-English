@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ogden's Basic English - 100词学习版</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Ogden's Basic English</h1>
+      <p>
+        第一版演示：100 个核心词学习清单（可勾选已学、自动保存进度、下载剩余词汇）。
+      </p>
+
+      <section class="toolbar">
+        <button id="resetBtn" type="button">重置进度</button>
+        <button id="downloadBtn" type="button">下载剩余词汇</button>
+      </section>
+
+      <p id="progress" class="progress">已学习 0 / 100</p>
+      <ul id="wordList" class="word-list" aria-label="Word learning list"></ul>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
